@@ -28,12 +28,12 @@
                 android:text="@string/false_button"/>
     </LinearLayout>
 
-    <Button
+    <ImageButton
             android:id="@+id/next_button"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
             android:layout_marginTop="40dp"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="@string/next_button"/>
+            android:src ="@drawable/arrow_right"/>
 
 </LinearLayout>
 
