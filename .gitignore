@@ -1,0 +1,10 @@
+.gradle/
+build/
+bin/
+local.properties
+*.bak
+# Generated files are ignored
+gen/
+*-fa-*
+*-he-*
+*-iw-*
