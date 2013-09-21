@@ -13,7 +13,8 @@ import android.widget.Toast;
 public class QuizActivity extends Activity {
 
     private static final String TAG = "QuizActivity";
-    private static final String KEY_INDEX = "index";
+    private static final String KEY_CURRENT_INDEX = "index";
+    private static final String KEY_CHEATER_STATE = "cheater";
 
     private Button mTrueButton;
     private Button mFalseButton;
@@ -77,7 +78,8 @@ public class QuizActivity extends Activity {
         });
 
         if (savedInstanceState != null) {
-            mCurrentIndex = savedInstanceState.getInt(KEY_INDEX, 0);
+            mCurrentIndex = savedInstanceState.getInt(KEY_CURRENT_INDEX, 0);
+            mIsCheater = savedInstanceState.getBoolean(KEY_CHEATER_STATE, false);
         }
 
         updateQuestion();
@@ -95,7 +97,8 @@ public class QuizActivity extends Activity {
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
         Log.i(TAG, "onSaveInstanceState");
-        savedInstanceState.putInt(KEY_INDEX, mCurrentIndex);
+        savedInstanceState.putInt(KEY_CURRENT_INDEX, mCurrentIndex);
+        savedInstanceState.putBoolean(KEY_CHEATER_STATE, mIsCheater);
     }
 
     @Override
